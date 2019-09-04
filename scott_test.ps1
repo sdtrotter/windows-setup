@@ -27,7 +27,7 @@ function executeScript {
 #executeScript "SystemConfiguration.ps1";
 #executeScript "FileExplorerSettings.ps1";
 #executeScript "SystemUtilities.ps1";
-executeScript "Browsers.ps1";
+#executeScript "Browsers.ps1";
 #executeScript "MediaTools.ps1";
 #executeScript "ProductivityApps.ps1";
 #executeScript "CommunicationsApps.ps1";

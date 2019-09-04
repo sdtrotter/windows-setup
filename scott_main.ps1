@@ -1,6 +1,6 @@
 # Description: Boxstarter Script
-# Author: Microsoft
-# Common settings for web dev
+# Author: Scott Trotter (forked from Microsoft)
+# Set up my main system
 
 Disable-UAC
 
@@ -18,25 +18,24 @@ write-host "helper script base URI is $helperUri"
 function executeScript {
     Param ([string]$script)
     write-host "executing $helperUri/$script ..."
-	iex ((new-object net.webclient).DownloadString("$helperUri/$script"))
+    Invoke-Expression ((new-object net.webclient).DownloadString("$helperUri/$script"))
 }
 
 #--- Setting up Windows ---
-executeScript "FileExplorerSettings.ps1";
-executeScript "SystemConfiguration.ps1";
-executeScript "CommonDevTools.ps1";
-executeScript "RemoveDefaultApps.ps1";
+#executeScript "RemoveDefaultApps.ps1";
 executeScript "HyperV.ps1";
-executeScript "Docker.ps1";
-executeScript "WSL.ps1";
+executeScript "SystemConfiguration.ps1";
+executeScript "FileExplorerSettings.ps1";
+executeScript "SystemUtilities.ps1";
 executeScript "Browsers.ps1";
-
-#--- Tools ---
-code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension msjsdiag.debugger-for-edge
-
-#--- Microsoft WebDriver ---
-choco install -y microsoftwebdriver
+executeScript "MediaTools.ps1";
+executeScript "ProductivityApps.ps1";
+executeScript "CommunicationsApps.ps1";
+executeScript "FunAndGames.ps1";
+#executeScript "CommonDevTools.ps1";
+executeScript "MoreDevTools.ps1";
+#executeScript "WSL.ps1";
+#executeScript "Docker.ps1";
 
 Enable-UAC
 Enable-MicrosoftUpdate

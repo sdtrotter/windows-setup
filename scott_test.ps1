@@ -23,10 +23,10 @@ function executeScript {
 
 #--- Setting up Windows ---
 #executeScript "RemoveDefaultApps.ps1";
-#executeScript "HyperV.ps1";
-#executeScript "SystemConfiguration.ps1";
-#executeScript "FileExplorerSettings.ps1";
-#executeScript "SystemUtilities.ps1";
+executeScript "HyperV.ps1";
+executeScript "SystemConfiguration.ps1";
+executeScript "FileExplorerSettings.ps1";
+executeScript "SystemUtilities.ps1";
 #executeScript "Browsers.ps1";
 #executeScript "MediaTools.ps1";
 #executeScript "ProductivityApps.ps1";
